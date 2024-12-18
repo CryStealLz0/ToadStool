@@ -1,0 +1,235 @@
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.container-contact {
+    width: 100%;
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-contact::after {
+    content: '';
+    background-image: url('../images/bg-contact.png');
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container-contact .title-contact {
+    text-align: center;
+    padding: 1rem 5rem;
+    margin-bottom: 3rem;
+    border-radius: 10px;
+    background-color: #ffffff30;
+    backdrop-filter: blur(1px);
+    border: 1px solid #ffffff30;
+    opacity: 0;
+    animation: show 0.3s ease-in 0.3s forwards;
+}
+
+.container-contact .title-contact h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(#ffffff, #009fa8);
+    background-clip: text;
+    color: transparent;
+}
+
+.container-contact .container-card-contact {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.container-contact .container-card-contact .card-contact {
+    display: flex;
+    width: 300px;
+    height: 100%;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #ffffff30;
+    backdrop-filter: blur(1px);
+    border: 1px solid #ffffff30;
+    opacity: 0;
+    animation: show 0.5s ease-in 0.8s forwards;
+}
+
+.container-contact .container-card-contact .card-contact .image-card-contact {
+    display: flex;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    background-color: #00f2ff30;
+    border: 1px solid #00f2ff30;
+}
+
+.container-contact
+    .container-card-contact
+    .card-contact
+    .image-card-contact
+    img {
+    width: 1.6rem;
+}
+
+.container-contact .container-card-contact .card-contact h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: linear-gradient(#ffffff, #009fa8);
+    background-clip: text;
+    color: transparent;
+}
+
+.container-contact .container-card-contact .card-contact p {
+    font-size: 1rem;
+    font-weight: lighter;
+    line-height: 1.6rem;
+    text-shadow: 1px 1px 3px black;
+}
+
+figure {
+    text-align: center;
+    margin: 20px auto;
+    width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1px);
+    opacity: 0;
+    animation: show 0.5s ease-in 1.2s forwards;
+}
+
+figure iframe {
+    width: 100%;
+    min-width: 300px;
+    height: 300px;
+    border: none;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 1em;
+    color: white;
+}
+
+.container-form-contact {
+    padding: 5rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.container-form-contact .form-contact {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.container-form-contact .form-contact .input-container {
+    position: relative;
+    width: 100%;
+}
+
+.container-form-contact .form-contact input {
+    width: 100%;
+    min-height: 3.6rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    padding-left: 4px;
+    padding-top: 8px;
+}
+
+.container-form-contact .form-contact label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(4px) translateY(6px);
+    padding: 2px 8px;
+    font-size: 1rem;
+    font-weight: 400;
+    background: #00a0a800;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.container-form-contact .form-contact input:focus + label,
+.container-form-contact .form-contact input:not(:placeholder-shown) + label {
+    transform: translateX(-10px) translateY(-14px);
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    text-shadow: 1px 1px 4px #000;
+}
+
+.container-form-contact .form-contact input.pesan {
+    min-height: 250px;
+}
+
+.input-container textarea {
+    width: 100%;
+    min-height: 250px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding-top: 20px;
+    padding-left: 4px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.input-container textarea::placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0px) translateY(0px);
+    color: #aaa;
+    font-size: 16px;
+    text-align: start; /* Rata atas */
+}
+
+.container-form-contact .form-contact textarea:focus + label,
+.container-form-contact .form-contact textarea:not(:placeholder-shown) + label {
+    transform: translateX(-10px) translateY(-14px);
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    text-shadow: 1px 1px 4px #000;
+}
+
+.btn-contact {
+    width: 200px;
+    height: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    background: rgba(0, 229, 255, 0.3);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-contact:hover {
+    background: rgba(0, 229, 255, 0.5);
+    border: 1px solid rgba(0, 229, 255, 0.5);
+}

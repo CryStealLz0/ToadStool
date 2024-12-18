@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TooadStool</title>
+        <link rel="icon" href="assets/images/asisten.png" type="image/png" />
+
+        <!-- Meta Deskripsi untuk SEO -->
+        <meta
+            name="description"
+            content="TOADSTOOL - Temukan semua informasi tentang macam-macam jamur, manfaatnya, dan cara melestarikannya di satu tempat."
+        />
+        <meta
+            name="keywords"
+            content="jamur, macam-macam jamur, manfaat jamur, jenis jamur, Toadstool"
+        />
+        <meta name="author" content="Dimas Indra Jaya" />
+
+        <!-- css -->
+        <link rel="stylesheet" href="assets/styles/style.css" />
+        <link rel="stylesheet" href="assets/styles/styleReset.css" />
+        <link rel="stylesheet" href="assets/styles/media-query.css" />
+        <link rel="stylesheet" href="assets/styles/animation.css" />
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <style>
+        .maskot-fungi,
+        .maskot-fungi2,
+        .maskot-fungi3 {
+            position: fixed;
+            height: 80px;
+            width: 10vw;
+            overflow: hidden;
+            z-index: 9999;
+            overflow: visible;
+        }
+        .maskot-fungi {
+            left: 0;
+            bottom: -2px;
+        }
+        .maskot-fungi2 {
+            right: 0;
+            bottom: -2px;
+        }
+        .maskot-fungi3 {
+            transform: translateX(-30px);
+            top: 0;
+            left: 0;
+        }
+
+        .maskot-fungi .fungi-1,
+        .maskot-fungi .fungi-2,
+        .maskot-fungi .fungi-3,
+        .maskot-fungi .fungi-4 {
+            position: absolute;
+            height: 100%;
+            bottom: 0;
+            margin-right: -10vw;
+            transform: translateX(-10vw);
+            animation: maskotWalk 25s linear 2s infinite;
+        }
+
+        .maskot-fungi .fungi-2 {
+            animation-delay: 9s;
+        }
+        .maskot-fungi .fungi-3 {
+            animation-delay: 9.5s;
+
+            height: 70%;
+        }
+        .maskot-fungi .fungi-4 {
+            height: 50%;
+            animation: maskotWalk 25s linear 9.9s forwards;
+        }
+        @keyframes maskotWalk {
+            to {
+                transform: translate(100vw);
+            }
+        }
+
+        .maskot-fungi2 .fungi-5 {
+            height: 60%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin-right: -10vw;
+            animation: maskotWalk2 40s linear 36s infinite;
+        }
+
+        .maskot-fungi2 .fungi-6 {
+            height: 100px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(-10vw, 12px);
+        }
+
+        .maskot-fungi2 .fungi-6-active {
+            height: 120px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            translate: -9vw 12px;
+            transform: scaleX(-1);
+        }
+
+        .maskot-fungi2 .fungi-7 {
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(-2vw, 2px);
+        }
+
+        @keyframes maskotWalk2 {
+            0% {
+                transform: translateX(0) scaleX(-1);
+            }
+            100% {
+                transform: translateX(-120vw) scaleX(-1);
+            }
+        }
+
+        .maskot-fungi3 .maskot {
+            position: absolute;
+            height: 300px;
+            bottom: 0;
+            right: 0;
+            rotate: 135deg;
+            transform: translateY(10vh);
+            animation: maskot 10s linear 7s forwards;
+        }
+
+        @keyframes maskot {
+            0% {
+                transform: translateY(10vh);
+            }
+            25% {
+                transform: translateY(-6vh);
+            }
+            75% {
+                transform: translateY(-6vh);
+            }
+            100% {
+                transform: translateY(10vh);
+            }
+        }
+    </style>
+    <body>
+        <div class="maskot-fungi">
+            <img class="fungi-1" src="assets/gifs/bike-fungi.gif" alt="" />
+            <img class="fungi-2" src="assets/gifs/maskot.gif" alt="" />
+            <img class="fungi-3" src="assets/gifs/maskot.gif" alt="" />
+            <img class="fungi-4" src="assets/gifs/maskot.gif" alt="" />
+        </div>
+        <div class="maskot-fungi2">
+            <img class="fungi-5" src="assets/gifs/bike-fungi.gif" alt="" />
+            <img
+                class="fungi-6"
+                id="oldFungi"
+                src="assets/gifs/old-fungi.gif"
+                alt=""
+            />
+            <img
+                class="fungi-7"
+                id="playButton"
+                src="assets/gifs/tried-fungi.gif"
+                alt=""
+                style="cursor: pointer"
+            />
+            <audio id="music-bg" src="assets/music/sound-bg.mp3"></audio>
+        </div>
+        <div class="maskot-fungi3">
+            <img class="maskot" src="assets/images/maskot.png" alt="" />
+        </div>
+        <header>
+            <nav>
+                <a href="about.html">About</a>
+                <a href="#" class="aktif" style="cursor: default">Home</a>
+                <a href="site-map.html">Site Map</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <div class="slider">
+            <div class="list">
+                <div class="item">
+                    <img src="assets/images/bg-1.jpg" alt="" />
+                    <span></span>
+                    <div class="detail">
+                        <div class="tittle">TooadStool</div>
+                        <div class="name">Amanita muscaria</div>
+                        <figure>
+                            <img
+                                src="assets/images/logo-1.png"
+                                alt="Avatar 1"
+                            />
+                            <figcaption>
+                                Toksisitas / Estetika / Signifikansi Budaya /
+                                Ekologi / Penelitian / Bahaya
+                            </figcaption>
+                        </figure>
+                        <div class="desc">
+                            Jamur ikonik dengan warna merah cerah dan bercak
+                            putih yang sering menjadi simbol dongeng dan cerita
+                            rakyat. Namun, di balik keindahannya, jamur ini
+                            menyimpan sisi gelap berupa toksisitas yang dapat
+                            berbahaya bagi manusia dan hewan.
+                        </div>
+                        <a href="about1.html" class="more"
+                            >Lihat lebih lanjut &raquo;</a
+                        >
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="assets/images/bg-2.jpg" alt="" />
+                    <span></span>
+                    <div class="detail">
+                        <div class="tittle">TooadStool</div>
+                        <div class="name">Lentinula edodes</div>
+                        <figure>
+                            <img
+                                src="assets/images/logo-2.png"
+                                alt="Avatar 1"
+                            />
+                            <figcaption>
+                                Nutrisi / Estetika / Signifikansi Budaya /
+                                Ekologi / Penelitian / Keamanan
+                            </figcaption>
+                        </figure>
+                        <div class="desc">
+                            Jamur yang paling populer di dunia karena nilai
+                            kuliner, nutrisi, dan signifikansi budayanya. Selain
+                            sebagai bahan utama dalam berbagai masakan, shiitake
+                            juga memiliki peran penting dalam ekologi sebagai
+                            pengurai alami.
+                        </div>
+                        <a href="about2.html" class="more"
+                            >Lihat lebih lanjut &raquo;</a
+                        >
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="assets/images/bg-3.jpg" alt="" />
+                    <span></span>
+                    <div class="detail">
+                        <div class="tittle">TooadStool</div>
+                        <div class="name">Mycena epipterygia</div>
+                        <figure>
+                            <img
+                                src="assets/images/logo-3.png"
+                                alt="Avatar 1"
+                            />
+                            <figcaption>
+                                Toksisitas / Estetika / Signifikansi Budaya /
+                                Ekologi / Penelitian / Potensi Bahaya
+                            </figcaption>
+                        </figure>
+                        <div class="desc">
+                            Jamur kecil dengan penampilan elegan yang sering
+                            ditemukan di hutan basah. Dengan batangnya yang
+                            berwarna kuning dan topi transparan, jamur ini
+                            memberikan nuansa magis di antara dedaunan hutan.
+                        </div>
+                        <a href="about3.html" class="more"
+                            >Lihat lebih lanjut &raquo;</a
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="thumbnail">
+                <div class="item">
+                    <img src="assets/images/bg-1.jpg" alt="" />
+                    <div class="detail">
+                        <a href="about1.html">
+                            <div class="name">Amanita muscaria</div>
+                            <blockquote>
+                                Amanita muscaria adalah jamur dengan warna merah
+                                yang menarik
+                            </blockquote>
+                        </a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="assets/images/bg-2.jpg" alt="" />
+                    <div class="detail">
+                        <a href="about2.html">
+                            <div class="name">Lentinula edodes</div>
+                            <blockquote>
+                                amur shiitake yang kaya nutrisi, populer dalam
+                                kuliner dan penelitian kesehatan.
+                            </blockquote>
+                        </a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="assets/images/bg-3.jpg" alt="" />
+                    <div class="detail">
+                        <a href="about3.html">
+                            <div class="name">Mycena epipterygia</div>
+                            <blockquote>
+                                Jamur kecil elegan dengan peran ekologis sebagai
+                                pengurai.
+                            </blockquote>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrows">
+                <button id="prev">
+                    <img src="assets/icons/right.svg" alt="" />
+                </button>
+                <button id="next">
+                    <img src="assets/icons/right.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="loading-bar"></div>
+        </div>
+        <script>
+            const playButton = document.getElementById('playButton');
+            const oldFungi = document.getElementById('oldFungi');
+            const music = document.getElementById('music-bg');
+            let isPlaying = false;
+
+            playButton.addEventListener('click', () => {
+                if (isPlaying) {
+                    music.pause();
+                    playButton.src = 'assets/gifs/tried-fungi.gif';
+                    oldFungi.src = 'assets/gifs/old-fungi.gif';
+                    document.getElementById('oldFungi').className = 'fungi-6';
+                } else {
+                    music.play();
+                    playButton.src = 'assets/gifs/dance-fungi.gif';
+                    oldFungi.src = 'assets/gifs/happy-fungi.gif';
+                    document.getElementById('oldFungi').className =
+                        'fungi-6-active';
+                }
+                isPlaying = !isPlaying;
+            });
+        </script>
+        <script src="assets/scripts/script.js"></script>
+    </body>
+</html>
